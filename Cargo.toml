@@ -1,0 +1,27 @@
+[package]
+name = "threat-classifier-proxy"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1"
+axum = { version = "0.8", features = ["http2"] }
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+hf-hub = { version = "0.4.3", default-features = false, features = ["ureq", "native-tls"] }
+http = "1"
+hyper = { version = "1", features = ["client", "http1", "http2"] }
+hyper-rustls = { version = "0.27", default-features = false, features = ["native-tokio", "http1", "http2", "ring", "tls12"] }
+hyper-util = { version = "0.1", features = ["client-legacy", "http1", "http2", "tokio"] }
+ort = "=2.0.0-rc.15"
+safetensors = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tempfile = "3"
+tokenizers = { version = "0.23.2", default-features = false, features = ["onig"] }
+tokio = { version = "1", features = ["macros", "net", "rt-multi-thread", "signal", "sync"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }
+sha2 = "0.10"
