@@ -1,0 +1,5 @@
+/target/
+/.cache/
+*.onnx
+*.onnx_data
+*.safetensors
